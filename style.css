@@ -1,0 +1,209 @@
+
+/* ------------------- *\
+   Fonts               
+\* ------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+/* ------------------- *\
+   Resets               
+\* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+/* set up the body */
+body {
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-400);
+    color: hsl( var(--clr-white) );
+    background-color: hsl( var(--clr-dark) );
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* make images easier to work with */
+img,
+picutre {
+    max-width: 100%;
+    display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* ------------------- *\
+   Custom properties               
+\* ------------------- */
+
+ :root {
+    /* Primary colors */
+    --clr-cyan: hsl(179, 62%, 43%);
+    --clr--light-cyan: hsl(179, 40%, 56%);
+    --clr-bright-yellow: hsl(71, 73%, 54%);
+
+    /* Neutral colors */
+    --clr-light-gray: hsl(204, 43%, 93%);
+    --clr-grayish-blue: hsl(218, 22%, 67%) ;
+    --clr-white:  hsl(0, 0%, 100%);
+
+    /* Typography */
+    --fs-normal: 1rem; 
+    --fs-heading: 1.5rem;
+    --ff-normal: "Karla", sans-serif;
+
+    --fw-normal: 400;
+    --fw-thin: 200; 
+    --fw-heading: 700;
+ }
+
+/* ------------------- *\
+   Utility classes               
+\* ------------------- */
+
+/* General utilities */
+
+.grid-container {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.container {
+    padding: 1.5rem;
+    display: grid;
+    gap: .5rem;
+    padding-bottom: 2rem;
+    min-height: 225px;
+} 
+
+.main-container {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-inline: 2rem;
+    box-shadow: 0px 5px 15px rgb(183, 186, 190);
+}
+
+/* typography */
+
+.bg-white          { background-color: var(--clr-white); }
+.bg-cyan           { background-color: var(--clr-cyan); }
+.bg-grayish-blue   { background-color: var(--clr-grayish-blue);}
+.bg-light-gray     { background-color: var(--clr-light-gray);}
+.bg-light-cyan     { background-color: var(--clr--light-cyan);}
+
+.text-cyan         { color: var(--clr-cyan); }
+.text-lime         { color: var(--clr-bright-yellow); }
+.text-grayish-blue { color: var(--clr-grayish-blue); }
+.text-light-gray   { color: var(--clr-light-gray); }
+
+.heading   {font-weight: var(--fw-heading); font-size: var(--fs-heading);}
+.body      { font-weight: var(--fw-normal); font-size: var(--fs-normal);}
+.bold      { font-weight: var(--fw-heading); }
+.font-main { font-family: var(--ff-normal);}
+
+/* Components */
+
+.cta-btn {
+    cursor: pointer;
+    border: none;
+    background-color: var(--clr-bright-yellow);
+    color: var(--clr-white);
+    font-weight: var(--fw-heading);
+    font-size: var(--fs-normal);
+    padding: 1rem;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+    box-shadow: 0 5px 10px rgb(60, 139, 139);
+    transition: opacity .2 ease;
+}
+
+.cta-btn:hover {
+    opacity: .9;
+}
+
+/* ------------------- *\
+   specific styles               
+\* ------------------- */
+
+aside .body {
+    margin-right: 3.5rem;
+}
+
+.price {
+    font-size: 2rem;
+}
+
+/* ------------------- *\
+   Media Queries               
+\* ------------------- */
+
+/* Mobile */
+@media (min-width: 480px) {
+    .container {
+        max-width: 500px;
+    }
+
+}
+
+
+/* Tablet and desktop */
+@media (min-width: 768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .main-container {
+        max-width: 800px;
+    }
+
+    .container {
+        max-width: none;
+    }
+
+}
+
+
